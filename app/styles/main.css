@@ -1,0 +1,64 @@
+// bower:scss
+// endbower
+
+/**
+ * Hide when Angular is not yet loaded and initialized
+ */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+.categories button {
+  width: 100%;
+  text-align: left;
+}
+
+.right-block {
+  margin-left: auto;
+}
+
+.shoping-cart {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+md-input-container:not(.md-input-invalid) .md-input {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.right-block label {
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .item {
+    max-height: 450px;
+    max-width: 400px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
