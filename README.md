@@ -5,7 +5,7 @@ version 0.15.1.
 
 ## Build & development
 
-Run `bower install` for installing dependencies
+Go to 'app' folder and  run `bower install` for installing dependencies
 
 ## preview
 
