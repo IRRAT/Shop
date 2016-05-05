@@ -1,0 +1,48 @@
+<md-toolbar class="md-medium-tall" layout="row" layout-align='space-between'>
+  <md-button hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
+    <md-icon md-svg-src="images/ic_menu_white_48px.svg"></md-icon>
+  </md-button>
+  <div layout="row" class="right-block">
+    <md-input-container>
+      <input placeholder="Search"  type="text" ng-model="search">
+    </md-input-container>
+    <md-button ng-click="toCart()" aria-label="Shoping cart">
+      <md-icon md-svg-src="images/ic_shopping_cart_white_48px.svg"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+
+<div flex layout="row">
+  <md-sidenav class="categories" ng-click="toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
+    <md-list>
+      <md-list-item ng-repeat="item in items | filter: {carrier : '!!'}">
+          <md-button ng-click="toggleCarrier(item.carrier)">
+            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+            {{item.carrier}}
+          </md-button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <md-content layout="row" layout-wrap flex id="content">
+    <md-card class="item" flex-xs="100" flex-gt-xs="49" ng-repeat="item in items | filter: {name: search} | filter: {carrier: seletedCarrier} ">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{item.name}}</span>
+          <span class="md-subhead">{{item.carrier}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media">
+            <img ng-src="{{phonesImagesUrl + item.imageName}}" class="md-card-image" alt="image caption">
+          </div>
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-content>
+        <p>{{item.snippet}}</p>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="addToCart(item)">
+        <md-icon md-svg-src="images/ic_add_shopping_cart_black_24px.svg"></md-icon>Add to cart</md-button>
+      </md-card-actions>
+    </md-card>
+  </md-content>
+</div>

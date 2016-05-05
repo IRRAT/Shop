@@ -1,0 +1,20 @@
+<md-toolbar class="md-medium-tall" layout="row" layout-align='center'>
+	<h2>Shoping Cart</h2>
+</md-toolbar>
+<md-content class="shoping-cart" layout-align="center">
+	<md-list >
+	  <md-list-item ng-repeat="item in selectedItems">
+	    <p> {{ item.name }} </p>
+	    <md-button ng-click="removeItem(item)" aria-label="Shoping cart">
+        <md-icon md-svg-src="images/ic_remove_shopping_cart_black_48px.svg" aria-label="remove "></md-icon>
+        remove
+      </md-button>
+	  </md-list-item>
+	</md-list>
+	<div class="cart-actions" layout="row" layout-align="end center">
+		<md-button>
+			<md-icon md-svg-src="images/ic_shopping_cart_black_24px.svg" aria-label="remove "></md-icon>
+	    order
+		</md-button>
+	</div>
+</md-content>
